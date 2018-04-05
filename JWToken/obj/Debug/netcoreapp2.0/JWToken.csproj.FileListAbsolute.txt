@@ -1,0 +1,11 @@
+c:\users\rs\source\repos\JWToken\JWToken\bin\Debug\netcoreapp2.0\JWToken.deps.json
+c:\users\rs\source\repos\JWToken\JWToken\bin\Debug\netcoreapp2.0\JWToken.runtimeconfig.json
+c:\users\rs\source\repos\JWToken\JWToken\bin\Debug\netcoreapp2.0\JWToken.runtimeconfig.dev.json
+c:\users\rs\source\repos\JWToken\JWToken\bin\Debug\netcoreapp2.0\JWToken.dll
+c:\users\rs\source\repos\JWToken\JWToken\obj\Debug\netcoreapp2.0\JWToken.csprojResolveAssemblyReference.cache
+c:\users\rs\source\repos\JWToken\JWToken\obj\Debug\netcoreapp2.0\JWToken.csproj.CoreCompileInputs.cache
+c:\users\rs\source\repos\JWToken\JWToken\obj\Debug\netcoreapp2.0\JWToken.AssemblyInfoInputs.cache
+c:\users\rs\source\repos\JWToken\JWToken\obj\Debug\netcoreapp2.0\JWToken.AssemblyInfo.cs
+C:\Users\RS\source\repos\JWToken\JWToken\bin\Debug\netcoreapp2.0\JWToken.pdb
+C:\Users\RS\source\repos\JWToken\JWToken\obj\Debug\netcoreapp2.0\JWToken.dll
+C:\Users\RS\source\repos\JWToken\JWToken\obj\Debug\netcoreapp2.0\JWToken.pdb

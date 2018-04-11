@@ -33,6 +33,11 @@ pipeline {
         stage('Publish') {
             steps {
                 echo 'Publishing...'
+		    
+		    when {
+		    ${env.BRANCH_NAME} 'master'
+			    echoc 'In master'
+		    }
                 
 		echo 'Creating Build_Offline.txt...'
                 writeFile file: "${PUBLISH_DIRECTORY}\\build_offline.htm", text: """<html>

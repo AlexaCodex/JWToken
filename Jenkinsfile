@@ -40,7 +40,7 @@ pipeline {
 	tage('Publish - Release') {
                when { branch "Release-*" }
 	    steps { 
-		     echo branch.substring(7, 9)
+		     echo ${env.BRANCH_NAME}.substring(7, 9)
 		echo 'I only execute on the release branch.' 
 	    	}             
         }

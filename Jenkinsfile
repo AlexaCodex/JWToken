@@ -17,7 +17,6 @@ pipeline {
         stage('Restore Package(s)...') {
             steps {
                 echo 'Restore Package(s)'
-                bat 'dotnet restore WP.PaymentValidators.sln'
             }
         }
         stage('Build') {

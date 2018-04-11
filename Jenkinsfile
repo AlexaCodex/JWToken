@@ -43,7 +43,7 @@ pipeline {
                when { branch "Release-*" }
 	    steps { 
 		    echo "${theName}"
-		    echo {theName}
+		    
 		    echo "${theNamed}"
 		echo 'I only execute on the release branch.' 
 	    	}             

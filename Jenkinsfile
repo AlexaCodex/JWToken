@@ -2,8 +2,7 @@
 
 pipeline {  
   environment {
-	  def branchName = "Release-2.132"
-	  def theName = env.BRANCH_NAME.split("-")[1]
+	  theName = env.BRANCH_NAME.split("-")[1]
 
      MSBuild15 = "E:\\JenkinsDependencies\\SonarQube\\SonarQube.Scanner.MSBuild.exe"
      DISTRIBUTION_SERVER = "C:\\Users\\RS\\Publish"     

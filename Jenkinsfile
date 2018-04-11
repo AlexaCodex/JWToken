@@ -3,6 +3,7 @@
 pipeline {  
   environment {
 	  theName = "${env.BRANCH_NAME.split("-")[1]}"
+	  theNamed = "${env.BRANCH_NAME.split("-")[0]}"
 
      MSBuild15 = "E:\\JenkinsDependencies\\SonarQube\\SonarQube.Scanner.MSBuild.exe"
      DISTRIBUTION_SERVER = "C:\\Users\\RS\\Publish"     
@@ -41,8 +42,9 @@ pipeline {
 	stage('Publish - Release') {
                when { branch "Release-*" }
 	    steps { 
-		    echo '${theName}'
-		    echo '{theName}'		    
+		    echo "${theName}"
+		    echo {theName}
+		    echo "${theNamed}"
 		echo 'I only execute on the release branch.' 
 	    	}             
         }

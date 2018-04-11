@@ -39,7 +39,7 @@ pipeline {
 	    	}             
         }
 	    
-	tage('Publish - Release') {
+	stage('Publish - Release') {
                when { branch "Release-*" }
 	    steps { 
 		    echo '${theName}'

@@ -4,7 +4,7 @@ pipeline {
   environment {
 	  def branchName = "Release-2.132"
      MSBuild15 = "E:\\JenkinsDependencies\\SonarQube\\SonarQube.Scanner.MSBuild.exe"
-     DISTRIBUTION_SERVER = "\\\\uk1tapt01994.worldpaytd.local\\Sites"     
+     DISTRIBUTION_SERVER = "C:\\Users\\RS\\Publish"     
      REPO_NAME = "WP.PaymentValidators.Test"
      PUBLISH_DIRECTORY = "${DISTRIBUTION_SERVER}\\${REPO_NAME}\\${env.BRANCH_NAME}"
      LONG_COMMIT_ID = "${GIT_COMMIT}"
@@ -23,23 +23,19 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                echo 'Sonar Scan Star'
-                bat "${MSBuild15} begin /k:WP.PaymentValidators-EngineSeparate /n:WP.PaymentValidators /v:EngineSeparate /d:sonar.stylecop.projectFilePath=source\\**\\**.csproj"
-                bat 'dotnet build WP.PaymentValidators.sln /t:Rebuild /p:DebugType=Full --no-restore'
-                bat "${MSBuild15} end"
+               
             }
         }
        stage('Test') {
             steps {
                 echo 'Testing..'
-                bat 'dotnet test Tests\\Wp.PaymentValidators.Tests.Core\\Wp.PaymentValidators.Tests.Core.csproj' 
             }
         }
         stage('Publish') {
             steps {
                 echo 'Publishing...'
-                bat "dotnet publish WP.PaymentValidators.sln -c release -o ${PUBLISH_DIRECTORY}"
-                echo 'Creating Build_Offline.txt...'
+                
+		echo 'Creating Build_Offline.txt...'
                 writeFile file: "${PUBLISH_DIRECTORY}\\build_offline.htm", text: """<html>
                 <title>${REPO_NAME} - ${env.BRANCH_NAME} - ${SHORT_COMMIT_ID}</title>
                 <body>

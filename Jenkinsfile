@@ -30,14 +30,21 @@ pipeline {
                 echo 'Testing..'
             }
         }
-        stage('Publish') {
+        stage('Publish - Master') {
                when { branch 'master' }
 	    steps { 
 		echo 'I only execute on the master branch.' 
-	    }
-                
-            
+	    	}             
         }
+	    
+	           stage('Publish - Release') {
+               when { branch "Release-*" }
+	    steps { 
+		echo 'I only execute on the release branch.' 
+	    	}             
+        }
+	    
+	    
     }
 }
 

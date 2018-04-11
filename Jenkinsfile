@@ -3,7 +3,7 @@
 pipeline {  
   environment {
 	  def branchName = "Release-2.132"
-	  def theName = ${env.BRANCH_NAME}.split(/-/)[1]
+	  def theName = ${env.BRANCH_NAME}.split("-")[1]
 
      MSBuild15 = "E:\\JenkinsDependencies\\SonarQube\\SonarQube.Scanner.MSBuild.exe"
      DISTRIBUTION_SERVER = "C:\\Users\\RS\\Publish"     
@@ -42,9 +42,8 @@ pipeline {
 	tage('Publish - Release') {
                when { branch "Release-*" }
 	    steps { 
-		    echo ${theName}
-		    echo {theName}
-		    
+		    echo '${theName}'
+		    echo '{theName}'		    
 		echo 'I only execute on the release branch.' 
 	    	}             
         }

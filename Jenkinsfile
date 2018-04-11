@@ -31,7 +31,7 @@ pipeline {
             }
         }
         stage('Publish') {
-            steps {
+            
                 echo 'Publishing...'
 		    
 		      if (env.BRANCH_NAME == 'master') {
@@ -40,20 +40,7 @@ pipeline {
 			    echo 'I execute elsewhere'
 			}
                 
-		echo 'Creating Build_Offline.txt...'
-                writeFile file: "${PUBLISH_DIRECTORY}\\build_offline.htm", text: """<html>
-                <title>${REPO_NAME} - ${env.BRANCH_NAME} - ${SHORT_COMMIT_ID}</title>
-                <body>
-                <strong>${REPO_NAME} - ${env.BRANCH_NAME} - ${SHORT_COMMIT_ID}</strong>
-                <ul>
-                <li><small>0.0.0.${env.BUILD_ID}</small></li>
-                <li><small>${new Date().format('dd MM yyyy hh:mm:ss')}</small></li>
-                <li><small>${REPO_NAME} - ${env.BRANCH_NAME}</small></li>
-                <li><small>#${env.BUILD_ID}</small></li>
-                </ul>
-                </body>
-                </html>"""
-            }
+            
         }
     }
 }

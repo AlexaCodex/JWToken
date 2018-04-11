@@ -34,10 +34,11 @@ pipeline {
             steps {
                 echo 'Publishing...'
 		    
-		    when {
-		    ${env.BRANCH_NAME} 'master'
-			    echoc 'In master'
-		    }
+		      if (env.BRANCH_NAME == 'master') {
+			    echo 'I only execute on the master branch'
+			} else {
+			    echo 'I execute elsewhere'
+			}
                 
 		echo 'Creating Build_Offline.txt...'
                 writeFile file: "${PUBLISH_DIRECTORY}\\build_offline.htm", text: """<html>

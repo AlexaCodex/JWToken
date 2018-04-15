@@ -1,2 +1,2 @@
 import org.jpipeline.*
-new stdPipeline.execute()
+new org.jpipeline.stdPipeline.execute()
